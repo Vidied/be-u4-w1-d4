@@ -6,7 +6,7 @@ public class Main {
 
         audio1.play();
 
-        audio1.abassaVolume(8);
+        audio1.abbassaVolume(8);
 
         audio1.play();
 

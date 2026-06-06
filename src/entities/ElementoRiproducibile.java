@@ -36,6 +36,6 @@ public abstract class ElementoRiproducibile extends ElementoMultimediale impleme
     }
 
     public void setVolume(int volume) {
-        this.volume = volume;
+        this.volume = (volume < 0) ? 0 : Math.min(volume, 10);
     }
 }
