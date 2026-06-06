@@ -10,23 +10,33 @@ public class RegistrazioneAudio extends ElementoRiproducibile {
 
 
     //Metodi per la regolazione del volume
-    public void abassaVolume() {
+    public void abassaVolume(int i) {
         if (getVolume() <= 0) {
             System.out.println("Volume già al minimo!");
-        } else {setVolume(getVolume() - 1);};
+        } else {
+            int nuovoVolume = getVolume() - i;
+            if (nuovoVolume < 0) {
+                setVolume(0);
+            } else {setVolume(nuovoVolume);}
+        };
 
     }
 
-    public void alzaVolume() {
+    public void alzaVolume(int i) {
         if (getVolume() >= 10) {
             System.out.println("Volume al massimo!");
-        } else {setVolume(getVolume() + 1);}
+        } else {
+            int nuovoVolume = getVolume() + i;
+            if (nuovoVolume > 10) {
+                setVolume(10);
+            } else {setVolume(nuovoVolume);}
+        }
     }
 
     @Override
     public void play() {
         for (int i = 0;i < getDurata(); i++ ){
-            System.out.println((i +  1) + ")" + getTitolo() + volumePunti());
+            System.out.println((i +  1) + ")" + getTitolo() + " " + volumePunti());
         }
     }
 }
