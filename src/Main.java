@@ -1,3 +1,5 @@
+import com.sun.jdi.VirtualMachineManager;
+import entities.Immagine;
 import entities.RegistrazioneAudio;
 import entities.Video;
 
@@ -24,9 +26,21 @@ public class Main {
 
         video1.play();
 
-        video1.alzaLuminostia(4);
+        video1.alzaLuminosita(4);
         video1.alzaVolume(5);
 
         video1.play();
+
+        Immagine imagine1 = new Immagine("Pikachu", 8);
+
+        imagine1.show();
+
+        imagine1.abbassaLuminosita(5);
+
+        imagine1.show();
+
+        imagine1.alzaLuminosita(4);
+
+        imagine1.show();
     }
 }

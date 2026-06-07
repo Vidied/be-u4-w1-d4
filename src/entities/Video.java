@@ -17,7 +17,7 @@ public class Video extends ElementoRiproducibile {
     public void alzaLuminosita(int i){setLuminosita(getLuminosita() + i);}
 
 
-    public String luminositaAsterschi(){
+    public String luminositaAsterischi(){
         return generaSegni("*", getLuminosita());
     }
 
@@ -35,6 +35,6 @@ public class Video extends ElementoRiproducibile {
     @Override
     public void play() {
         for (int i = 0;i < getDurata(); i++ ){
-            System.out.println((i +  1) + ")" + getTitolo() + " " + volumePunti() + " " + luminositaAsterschi());
+            System.out.println((i +  1) + ")" + getTitolo() + " " + volumePunti() + " " + luminositaAsterischi());
     }}
 }
