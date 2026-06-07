@@ -18,6 +18,10 @@ public class RegistrazioneAudio extends ElementoRiproducibile {
      setVolume(getVolume() + i);
     }
 
+    public String volumePunti(){
+        return generaSegni("!", getVolume());
+    }
+
     @Override
     public void play() {
         for (int i = 0;i < getDurata(); i++ ){

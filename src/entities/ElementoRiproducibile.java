@@ -14,14 +14,7 @@ public abstract class ElementoRiproducibile extends ElementoMultimediale impleme
         this.volume = volume;
     }
 
-    //Metodo che crea una stringa contenente il numero dei puntini necessari
-    public String volumePunti() {
-        String volume = "";
-        for (int i = 0; i < getVolume(); i++) {
-            volume += "!";
-        }
-        return volume;
-    }
+
 
     public int getDurata() {
         return durata;
