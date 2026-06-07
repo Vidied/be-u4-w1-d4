@@ -14,6 +14,19 @@ public abstract class ElementoRiproducibile extends ElementoMultimediale impleme
         this.volume = volume;
     }
 
+    //Metodi per la regolazione del volume
+    public void abbassaVolume(int i) {
+        setVolume(getVolume() - i);
+    }
+
+    public void alzaVolume(int i) {
+        setVolume(getVolume() + i);
+    }
+
+    public String volumePunti(){
+        return generaSegni("!", getVolume());
+    }
+
 
 
     public int getDurata() {

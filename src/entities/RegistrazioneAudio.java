@@ -9,19 +9,6 @@ public class RegistrazioneAudio extends ElementoRiproducibile {
     }
 
 
-    //Metodi per la regolazione del volume
-    public void abbassaVolume(int i) {
-   setVolume(getVolume() - i);
-    }
-
-    public void alzaVolume(int i) {
-     setVolume(getVolume() + i);
-    }
-
-    public String volumePunti(){
-        return generaSegni("!", getVolume());
-    }
-
     @Override
     public void play() {
         for (int i = 0;i < getDurata(); i++ ){
