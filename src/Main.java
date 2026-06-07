@@ -1,10 +1,9 @@
-import com.sun.jdi.VirtualMachineManager;
+
 import entities.ElementoMultimediale;
 import entities.Immagine;
 import entities.RegistrazioneAudio;
 import entities.Video;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -18,12 +17,13 @@ public class Main {
 
         for (int i = 0; i < playlist.length; i++) {
             System.out.println("Elemento numero: " + (i +1));
-            System.out.println("Scrivi il titolo dell'elemento");
-            String titolo = scanner.nextLine();
 
             System.out.println("Scegli la tipologia di elemento da aggiugnere scrivendo 1 (audio), 2 (video) oppure 3 (immagine)");
             int scelta = scanner.nextInt();
             scanner.nextLine();
+
+            System.out.println("Scrivi il titolo dell'elemento");
+            String titolo = scanner.nextLine();
 
             switch (scelta){
                 case 1:
@@ -48,8 +48,40 @@ public class Main {
                     System.out.println("Inserisci la luminosità dell'immagine");
                     int luminositaImmagine = scanner.nextInt();
                     playlist[i] = new Immagine(titolo, luminositaImmagine);
+                    break;
+
+                default:
+                    System.out.println("Valore non valido! Ripetere");
+                    i--;
             }
         }
+
+        int sceltaFile = -1;
+
+        while (sceltaFile != 0) {
+            System.out.println("Scegli un file da riprodurre 1-5 oppure 0 per uscire dal player");
+            for (int i = 0; i < playlist.length; i++) {
+                System.out.println((i + 1) + ")" + playlist[i].getTitolo());
+            }
+            sceltaFile = scanner.nextInt();
+            scanner.nextLine();
+
+            if (sceltaFile > 0 && sceltaFile <= 5){
+                ElementoMultimediale file = playlist[sceltaFile - 1];
+
+                if (file instanceof Video) {
+                    ((Video) file).play();
+                } else if (file instanceof RegistrazioneAudio) {
+                    ((RegistrazioneAudio) file).play();
+                } else if(file instanceof Immagine) {
+                    ((Immagine) file).show();
+                }
+            } else if (sceltaFile != 0) {
+                System.out.println("Numero non valido!");
+            }
+
+        }
+        System.out.println("Player chiuso!");
 
 
 
