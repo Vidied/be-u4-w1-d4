@@ -11,11 +11,11 @@ public abstract class ElementoMultimediale {
 
     //Metodo che crea una stringa contenente il numero dei puntini necessari
     public String generaSegni(String segno, int volte) {
-        String volume = "";
+        String segni = "";
         for (int i = 0; i < volte; i++) {
-            volume += segno;
+            segni += segno;
         }
-        return volume;
+        return segni;
     }
 
     //getter e setter
